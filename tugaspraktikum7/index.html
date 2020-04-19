@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="kalkulator.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Kalkulator</title>
+</head>
+<body>
+	<div class="panel" align="center">
+		
+	<div class="container">	
+		<div class="display">
+			<h2 style="color: white;">Kalkulator</h2>
+			<input type="text"  id="display" value="" disabled></input>
+		</div>
+		<div class="button">
+	        <button type="input" class="kalkulator-button number value="7" onclick="add(7)">7</button>
+	        <button type="button" class="kalkulator-button number value="8" onclick="add(8)s">8</button>
+	        <button type="button" class="kalkulator-button number value="9" onclick="add(9)">9</button>
+	        <button type="button" class="kalkulator-button operator value="+" onclick="add('+')">+</button>
+   		 </div>
+   		 <div class="button">
+	        <button type="button" class="kalkulator-button number value="4" onclick="add(4)">4</button>
+	        <button type="button" class="kalkulator-button number value="5" onclick="add(5)">5</button>
+	        <button type="button" class="kalkulator-button number value="6" onclick="add(6)">6</button>
+	        <button type="button" class="kalkulator-button operator value="*" onclick="add('*')">*</button>
+   		 </div>
+   		 <div class="button">
+	        <button type="button" class="kalkulator-button number value="1" onclick="add(1)">1</button>
+	        <button type="button" class="kalkulator-button number value="2" onclick="add(2)">2</button>
+	        <button type="button" class="kalkulator-button number value="3" onclick="add(3)">3</button>
+	        <button type="button" class="kalkulator-button operator value="-" onclick="add('-')">-</button>
+   		 </div>
+   		 <div class="button">
+	        <button type="button" class="kalkulator-button number value="." onclick="add('.')">.</button>
+	        <button type="button" class="kalkulator-button" value="0" onclick="add(0)">0</button>
+	        <button type="button" class="kalkulator-button operator value="+/-" onclick="plusMinus()">+/-</button>
+	         <button type="button" class="kalkulator-button" value="/" onclick="add('/')">/</button>
+   		 </div>
+   		 <div class="button">
+   		 	<button type="button" class="kalkulator-button number value="AC" onclick="clr('')" style="width: 115px">AC</button>
+   		 	<button type="button" class="kalkulator-button number value="=" onclick="calc()" style="  width: 115px">=</button>
+   		 </div>
+   		 </div>
+		
+
+	<script type="text/javascript">
+		function add(val){
+			document.getElementById("display").value += val; 
+		}
+		function plusMinus(){
+			document.getElementById("display").value *= (-1); 
+		}
+		function clr(val){
+			document.getElementById("display").value = val;
+		}
+		function calc(){
+			try{ 
+				clr(eval(document.getElementById("display").value));
+			}
+			catch(calc){
+				clr("Error")
+
+				function del() {
+					var textF= display.value;
+					var textE= textF.slice(0,textF.length - 1 );
+					display.value=textE;
+					changeFontsize(display.value.length);
+				}
+			}
+		}
+	</script>	
+</body>
+</html>
